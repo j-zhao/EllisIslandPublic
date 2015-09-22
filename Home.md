@@ -1,6 +1,6 @@
 <p align="center"><img src=http://i.imgur.com/4Eqd4k7.png?1></p>
 # Vertafore Ellis Island
-***
+
 ## Overview
 Vertafore Ellis Island is a [Lambda Architecture](http://lambda-architecture.net/) based data platform to store and access large amounts of real time and historical data or files in Hadoop.  Besides being able to handle the sheer volume of data, Ellis Island provides API's to access stored data through various tools and services.  In addition to handling bulk data processes, Ellis Island also supports real-time update and ingestion.
 
