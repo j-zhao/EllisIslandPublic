@@ -7,3 +7,4 @@
 - [ ] Solr for enterprise search
 - [ ] Finish Documentation
 - [ ] Ellis Island/Ferry Properties UI
+- [ ] Write from SQL Server (probably better to use SQOOP)
