@@ -6,3 +6,4 @@
 - [ ] R-Integration?
 - [ ] Solr for enterprise search
 - [ ] Finish Documentation
+- [ ] Ellis Island/Ferry Properties UI
