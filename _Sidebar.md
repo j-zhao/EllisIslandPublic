@@ -1,3 +1,4 @@
+# Content
 * [Home](https://github.com/maximusjesse/EllisIsland/wiki)
 * [Architecture](https://github.com/maximusjesse/EllisIsland/wiki/Architecture)
 * [Getting Started](https://github.com/maximusjesse/EllisIsland/wiki/Getting-Started)
