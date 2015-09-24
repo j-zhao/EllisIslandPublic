@@ -16,6 +16,9 @@ To POST/GET,
       http://localhost:8082/consumers/my_binary_consumer/instances/my_instance/topics/test
   [{"key":null,"value":"S2Fma2E=","partition":0,"offset":0}]`
 
+Note: the GET request is for the Kafka Topic, not the record itself from HDFS.  This is similar to executing:
+`bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning`
+
 Further specific commands will be included here once the environment is fully established.
 
 ## Consuming Data
