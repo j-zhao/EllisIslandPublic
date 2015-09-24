@@ -6,3 +6,4 @@
 - [Apache Storm](https://storm.apache.org/)
 - [Apache Phoenix](https://phoenix.apache.org/)
 - [Lambda Architecture](http://lambda-architecture.net/)
+- [Confluent](http://docs.confluent.io/1.0.1/index.html)
