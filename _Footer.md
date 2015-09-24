@@ -1,1 +1,1 @@
-[Source](github.com/maximusjesse/EllisIsland)
+<a align="center">[Source](github.com/maximusjesse/EllisIsland)</a>
