@@ -1,5 +1,5 @@
 # Overview
-[Storm topologies](https://storm.apache.org/) for each [Ellis Island Ferry](https://github.com/maximusjesse/EllisIsland/tree/master/EllisIsland_Java/src/main/resources) is defined by the [**ferry.properties**](https://github.com/maximusjesse/EllisIslandPublic/ferry.properties) file in the related config sections.  In general, the Ellis Island storm topology will read from a specified Kafka topic, making the topology a Kafka consumer, then write it to three destinations:
+[Storm topologies](https://storm.apache.org/) for each [Ellis Island Ferry](https://github.com/maximusjesse/EllisIsland/tree/master/EllisIsland_Java/src/main/resources) is defined by the [**ferry.properties**](https://github.com/maximusjesse/EllisIslandPublic/blob/master/ferry.properties) file in the related config sections.  In general, the Ellis Island storm topology will read from a specified Kafka topic, making the topology a Kafka consumer, then write it to three destinations:
 
 1.  HDFS (**##HDFS Topology**)
 2.  Hive (**##Hive Topology**)
