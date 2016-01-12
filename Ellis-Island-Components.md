@@ -43,7 +43,7 @@ In Ellis Island, Kafka provides the queue for which each Ellis Island user write
 ### Storm
 [Storm](https://storm.apache.org/) excels as one of the fastest distributed real-time streaming frameworks in modern data-architecture.  In terms throughput and speed, Storm has reliably been faster to many similar projects, such as Spark Streaming, Samza, and Flume.
 
-<p align="center"><img src=insertlinkhere.jpg></p>
+<p align="center"><img src=/images/StormTopology.png></p>
 
 Storm's computational model utilizes "topologies" to create each individual process for data.  Data sources are known as "spouts", which pass data throughout the topology as tuples into bolts.  Bolts then compute data and write it forward to other parts in the topology.
 

@@ -1,2 +1,2 @@
 #Dataflow
-<p align="center"><img src=/images/dataflow.png></p>
+<p align="center"><img src=/images/Dataflow.png></p>
