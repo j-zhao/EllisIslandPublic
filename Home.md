@@ -3,7 +3,9 @@ NOTE: This is a public version of the Ellis Island wiki.  Currently, the source 
 <p align="center"><img src=http://i.imgur.com/4Eqd4k7.png?1></p>
 
 ## Overview
-Vertafore Ellis Island is a [Lambda Architecture](http://lambda-architecture.net/) based data platform to store and access large amounts of real time and historical data or files through Vertafore's Hadoop environment.  Besides being able to process and store the high volume and throughput of data, Ellis Island provides API's to access stored data through various tools and services.  In addition to handling bulk data processes, Ellis Island also supports real-time update and ingestion.
+Vertafore Ellis Island is a [Lambda Architecture](http://lambda-architecture.net/) based data infrastructure and platform to store and access large amounts of real time and historical data or files through Vertafore's Hadoop environment.  Besides being able to process and store the high volume and throughput of data, Ellis Island provides API's to access stored data through various tools and services.  In addition to handling bulk data processes, Ellis Island also supports real-time update and ingestion.
+
+To get started, we recommend reading [Architecture](https://github.com/maximusjesse/EllisIslandPublic/wiki/Architecture) and [Components](https://github.com/maximusjesse/EllisIslandPublic/wiki/Ellis-Island-Components) for concepts and design, followed by the [User Guide](https://github.com/maximusjesse/EllisIslandPublic/wiki/User-Guide) and [Dataflow](https://github.com/maximusjesse/EllisIslandPublic/wiki/Dataflow) to understand how data is written through the pipeline.
 
 ## Purpose
 In 2014, Vertafore Enterprise Analytics adopted Hadoop as a multi-purpose infrastructure to handle various data-driven features and products.  In the spirit of sharing this resource across the organization, we developed Vertafore Ellis Island to meet the growing demands and complications that is a part of storing and processing high volumes of data.

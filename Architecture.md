@@ -9,6 +9,9 @@ With Hadoop, we solve **(1)** by nature of its design.  Horizontally scalable, i
 
 See the [components](https://github.com/maximusjesse/EllisIslandPublic/wiki/Ellis-Island-Components) page to read more about each tool in detail.
 
+## Infrastructure and DataFlow
+<p align="center"><img src=https://raw.githubusercontent.com/maximusjesse/EllisIslandPublic/master/images/VertaforeDataFlow.PNG></p>
+
 ## Design
 <p align="center"><img src=http://i.imgur.com/tzAFJ6i.png height="600"></p>
 
@@ -17,7 +20,7 @@ In considering the need to store historical data for long-term versus real-time 
 
 All data will be written to [Apache Hive](https://hive.apache.org/) for long-term archiving.  Initial design puts storage at 1 year, although most likely this will be expanded to be a permanent store in the future.  Hive records are also accessible through the same REST API, with slightly slower performance.  Hive has more powerful SQL-like querying abilities for more in-depth consumption.  At this moment, users are only allowed to retrieve records, and will not be able to directly manipulate Hive databases.
 
-In addition to these databases, the data will also be written in raw text form to the hdfs directory specified in your own HDFS directory.
+In addition to these databases, the data will also be written in raw text form to the HDFS directory specified in your own Ferry configurations.
 
 ### Ellis Island Ferry
 The Ellis Island [Ferry properties](https://github.com/maximusjesse/EllisIslandPublic/wiki/Creating-Your-Ferry) file is used to allow teams to define their pipelines to their requirements.  Each pipeline will be started with its own unique Ferry.  This allows Ellis Island to create specific Kafka topics to write to, as well a unique Storm topologies to write your data to its specific HBase and Hive databases.

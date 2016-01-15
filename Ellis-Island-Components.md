@@ -1,6 +1,8 @@
 # Hadoop (and related technologies) 411
 
 This page serves to give an introduction to the relevent technologies and tools we used within Ellis Island.  Hopefully, this will answer some questions regarding design, implementation, scaleability, and reliability.
+
+<p align="center"><img src=https://raw.githubusercontent.com/maximusjesse/EllisIslandPublic/master/images/EllisIsland_Components.png></p>
 <!-- 
 ## Hardware
 
@@ -43,8 +45,23 @@ In Ellis Island, Kafka provides the queue for which each Ellis Island user write
 ### Storm
 [Storm](https://storm.apache.org/) excels as one of the fastest distributed real-time streaming frameworks in modern data-architecture.  In terms throughput and speed, Storm has reliably been faster to many similar projects, such as Spark Streaming, Samza, and Flume.
 
-<p align="center"><img src=/images/StormTopology.png></p>
+<p align="center"><img src=https://raw.githubusercontent.com/maximusjesse/EllisIslandPublic/master/images/StormTopology.png></p>
 
 Storm's computational model utilizes "topologies" to create each individual process for data.  Data sources are known as "spouts", which pass data throughout the topology as tuples into bolts.  Bolts then compute data and write it forward to other parts in the topology.
 
 Ellis Island uses Storm primarily to process and write data quickly and efficiently from a Kafka Topic.  When we receive data, suppose a delimited string containing an XML, Storm parses this data to be written.  Then, a separate bolt takes over and writes it to three locations: HDFS (raw), Hive (tuple), and HBase (tuple).  Each topology is unique to its associated Ferry and Kafka topic in our system.  In the future, these topologies can easily be expanded.  For instance, we could write a new bolt to shred and parse XML elements into its own tuple, to be written into an RDBMS or separate Hive and HBase tables.  Or, we could create a new topology to cause an alert whenever a premium inside a carrier return rating falls within certain parameters.  When speed is key, Storm is extremely powerful.
+
+## Hadoop-Backed Databases
+In terms of storing and processing data, NoSQL databases have many advantages compared to traditional RDBMS methods.  Primarily, as more data is written to a relational database, performance in aggregation and querying as well as storage costs exponentially increases to the point where it becomes incredibly difficult to scale further.  Most NoSQL databases, in particular Hive/HBase which are Hadoop backed, can scale infinitely with a near constant performance aggregation and linear cost per gigabyte.  Often times, it's not worth the cost and pains of migrating to a NoSQL database if the volume is not there.  In the case of the array and volume of data in the Vertafore offerings, a Hadoop-backed infrastructure is the most logical and scalable design to support data-driven development.
+
+### Hive
+[Hive](https://hive.apache.org/) was one of the earliest use cases for Hadoop in its creation.  Although not relational, Hive was created to mimic many of the features and designs of a traditional SQL RDBMS.  Syntactically, Hive Query Language (HQL) is very easy for a database administrator to write, so historically Hive was used to extend traditional relational databases after they could no longer scale practically.  Hive data is backed by HDFS.
+
+<p align="center"><img src=insertgraphhere.png></p>
+
+It's important to keep in mind that Hive operations come with some overhead.  To run these large batch aggregations and operations in queries, Hive will utilize MapReduce to create distributed jobs across Hive nodes in a cluster.  As a result, in small operations with relatively less data, SQL will outperform Hive.  However, Hive will be considerably faster as data increases, provided the proper hardware.  This performance comparison can be seen in the graph above.
+
+Ellis Island uses Hive as long-term archiving.  This makes sense due to the volume anticipated from systems writing through Ellis Island can scale indefinitely.  Reporting or aggregations can be performed efficiently for vast amounts of data using Hive queries.
+
+##HBase
+[Hbase](
